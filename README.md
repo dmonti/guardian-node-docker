@@ -4,9 +4,11 @@ Dockerized HYCHAIN guardian-cli from https://github.com/HYCHAIN/guardian-node-so
 
 From project folder:
 
-## Build local image:
+## 1. Build your image locally
 > docker build -t hychain:latest .
 
-## Edit and deploy docker-compose.yml
-Replace <YOUR_GUARDIAN_PRIVATE_KEY> with your actual private key
+## 2. Edit docker-compose.yml
+Replace `<YOUR_GUARDIAN_PRIVATE_KEY>` with your actual private key and execute the command:
+
+## 3. Deploy your container:
 > docker-compose up -d --remove-orphans
