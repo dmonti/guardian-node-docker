@@ -3,12 +3,12 @@ FROM ubuntu:latest
 ENV GUARDIAN_PRIVATE_KEY=
 ENV LOOP_INTERVAL_MS=3600000
 
-RUN apt update
+RUN apt update && apt -y install wget
 
-COPY guardian-cli-linux /opt/hychain/guardian-cli-linux
+RUN wget -O /opt/hychain https://github.com/HYCHAIN/guardian-node-software/releases/download/0.0.1/guardian-cli-linux-v0.0.1.zip
+RUN unzip /opt/hychain/guardian-cli-linux-v0.0.1.zip -d /opt/hychain
+
 RUN chmod +x /opt/hychain/guardian-cli-linux
-
-COPY validation-engine /opt/hychain/validation-engine
 RUN chmod +x /opt/hychain/validation-engine/jit
 RUN chmod +x /opt/hychain/validation-engine/replay.wasm
 
