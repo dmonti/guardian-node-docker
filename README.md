@@ -1,4 +1,6 @@
-# hychain-docker
+# guardian-node-docker
+
+Dockerized HYCHAIN guardian-cli from https://github.com/HYCHAIN/guardian-node-software
 
 From project folder:
 
