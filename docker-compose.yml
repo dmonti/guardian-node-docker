@@ -1,7 +1,7 @@
 services:
-  hychain:
-    container_name: hychain
-    image: hychain:latest
+  guardian:
+    container_name: guardian-node
+    image: hychain\guardian-node
     restart: always
     environment:
       - GUARDIAN_PRIVATE_KEY=<YOUR_GUARDIAN_PRIVATE_KEY>
