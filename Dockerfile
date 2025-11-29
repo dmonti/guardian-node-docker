@@ -2,6 +2,7 @@ FROM ubuntu:latest
 
 ENV GUARDIAN_PRIVATE_KEY=
 ENV LOOP_INTERVAL_MS=3600000
+ENV RPC_URL=https://rpc.hychain.com/http
 
 RUN apt update && apt -y install wget && apt -y install unzip
 
@@ -16,4 +17,4 @@ RUN chmod +x /opt/hychain/validation-engine/replay.wasm
 
 WORKDIR /opt/hychain
 
-ENTRYPOINT /opt/hychain/guardian-cli-linux guardian run $GUARDIAN_PRIVATE_KEY --loop-interval-ms $LOOP_INTERVAL_MS
+ENTRYPOINT /opt/hychain/guardian-cli-linux guardian run $GUARDIAN_PRIVATE_KEY --rpc-url $RPC_URL --loop-interval-ms $LOOP_INTERVAL_MS
